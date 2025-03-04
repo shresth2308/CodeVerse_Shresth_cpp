@@ -6,7 +6,7 @@ class ChocolateBox;
 class LoveLetter;
 
 class RomanticGift{
-    private:
+    protected:
     string sname;
     string rname;
     int price;
