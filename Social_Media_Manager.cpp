@@ -67,7 +67,7 @@ int main(){
         cout<<"\nContent Creator Account is Disabled\n";
     }
 
-    Moderator bb("Riya",693,0021,"Disable",4,"High");
+    Moderator bb("Riya",693,021,"Disable",4,"High");
     if(bb.isactive()){
         bb.displayProfile();
     }
