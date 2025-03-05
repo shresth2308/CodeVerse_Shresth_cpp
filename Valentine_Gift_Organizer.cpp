@@ -25,9 +25,9 @@ class RomanticGift{
         cout<<"\n***Displaying Details***\n\n";
         cout<<"Sender's Name: "<<sname<<endl;
         cout<<"Receiver's Name: "<<rname<<endl;
-        cout<<"Price: $"<<price;
-        cout<<endl;
+        cout<<"Price: $"<<price<<endl;
     }
+    
     friend void printGiftDetails(RomanticGift, Flower, ChocolateBox, LoveLetter);
 };
 
