@@ -139,7 +139,7 @@ int main(){
             break;
             case 4:
             cout<<endl;
-            printGiftDetails(a,f, cb, ll);
+            printGiftDetails(a, f, cb, ll);
             break;
             default:
             cout<<"Invalid Choice! Try Again..."<<endl;
