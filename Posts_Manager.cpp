@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+
 class SocialMediaPost{
     protected:
     string aname;
