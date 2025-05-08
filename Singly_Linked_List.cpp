@@ -21,24 +21,39 @@ class Node{
     }
 };
 
-void InsertAtHead(Node* &head,int d){
-    Node* temp=new Node(d);
-    temp->next=head;
-    head=temp;
+void InsertAtHead(Node* &head, Node* &tail, int d){
+    if(head==NULL){
+        Node* temp=new Node(d);
+        head=temp;
+        tail=temp;
+        return;
+    }
+    else{
+        Node* temp=new Node(d);
+        temp->next=head;
+        head=temp;
+    }
 }
 
-void InsertAtTail(Node* &tail,int d){
-    Node* temp=new Node(d);
-    temp->next=NULL;
-    tail->next=temp;
-    tail=temp;
+void InsertAtTail(Node* &head, Node* &tail,int d){
+    if(tail==NULL){
+        Node* temp=new Node(d);
+        head=temp;
+        tail=temp;
+    }
+    else{
+        Node* temp=new Node(d);
+        temp->next=NULL;
+        tail->next=temp;
+        tail=temp;
+    }
 }
 
 void InsertAtMiddle(Node* &head, Node* &tail, int position,int d){
     Node* temp=head;
     int i=1;
     if(position==1){
-        InsertAtHead(head,d);
+        InsertAtHead(head,tail,d);
         return;
     }
     while(i<position-1){
@@ -46,7 +61,7 @@ void InsertAtMiddle(Node* &head, Node* &tail, int position,int d){
         i++;
     }
     if(temp->next==NULL){
-        InsertAtTail(tail,d);
+        InsertAtTail(head,tail,d);
         return;
     }
     Node* NodeToInsert= new Node (d);
@@ -92,22 +107,19 @@ void DeleteNode(Node* &head, Node* &tail, int position){
 int main(){
     Node* head=NULL;
     Node* tail=NULL;
-    Node* node1=new Node(10);
-    head=node1;
-    tail=node1;
-    InsertAtHead(head,12);
-    InsertAtTail(tail,15);
+    InsertAtHead(head,tail,12);
+    InsertAtTail(head,tail,15);
     InsertAtMiddle(head,tail,3,14);
-    InsertAtMiddle(head,tail,5,19);
+    InsertAtMiddle(head,tail,2,19);
     InsertAtMiddle(head,tail,1,5);
     printLL(head);
     cout<<"Head: "<<head->data<<endl;
     cout<<"Tail: "<<tail->data<<endl;
-    DeleteNode(head,tail,4);
+    DeleteNode(head,tail,5);
     printLL(head);
     cout<<"Head: "<<head->data<<endl;
     cout<<"Tail: "<<tail->data<<endl;
-    DeleteNode(head,tail,5);
+    DeleteNode(head,tail,2);
     printLL(head);
     cout<<"Head: "<<head->data<<endl;
     cout<<"Tail: "<<tail->data<<endl;
